@@ -28,10 +28,11 @@ export const Content = styled.article`
     align-items: center;
   }
 
-  /* image {
+  .image {
     margin-top: 15px;
+
     height: 97vh;
-  } */
+  }
 `;
 export const ContainerForm = styled.section`
   form {
@@ -65,18 +66,17 @@ export const ContainerForm = styled.section`
       align-items: center;
       margin: 30px;
 
-      input {
+      .inputs {
         border-radius: 5px;
         margin: 5px;
         width: 60%;
         height: 70%;
         padding: 10px;
       }
-
       .eye {
         position: absolute;
-        bottom: 225px;
-        right: 420px;
+        bottom: 406px;
+        right: 200px;
         cursor: pointer;
       }
 

@@ -10,6 +10,7 @@ import republica from "../../asserts/republica-estudantes.jpg";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { setAuth } = useAuth();
@@ -29,13 +30,16 @@ const Login = () => {
 
   const handleFormLogin = (data) => {
     console.log(data);
-    api.post("/login", data).then((response) => {
-      localStorage.clear();
-      localStorage.setItem("token", response.data.token);
-      setAuth(response.data.token);
-      console.log(response.data);
-      //acessar a pagina interna
-    });
+    api
+      .post("/login", data)
+      .then((response) => {
+        localStorage.clear();
+        localStorage.setItem("token", response.data.token);
+        setAuth(response.data.token);
+        console.log(response.data);
+        //acessar a pagina interna
+      })
+      .catch((err) => toast.error("Nome de usuário ou senha inválida!"));
   };
 
   const showPassword = () => {
@@ -59,12 +63,19 @@ const Login = () => {
             </div>
             <h1> Fazer Login</h1>
             <div>
-              <input type="email" placeholder="email" {...register("email")} />
+              <input
+                type="email"
+                placeholder="email"
+                {...register("email")}
+                className="inputs"
+              />
               {errors.email?.message}
+
               <input
                 type={typePassword}
                 placeholder="password"
                 {...register("password")}
+                className="inputs"
               />
               {visibility ? (
                 <BsFillEyeSlashFill
@@ -75,6 +86,7 @@ const Login = () => {
               ) : (
                 <IoEyeSharp size={20} className="eye" onClick={showPassword} />
               )}
+
               {errors.password?.message}
               <span>
                 <Link> Esqueci senha </Link>
