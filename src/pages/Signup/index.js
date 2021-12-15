@@ -2,7 +2,11 @@ import FormCadastro from "../../components/FormCadastro";
 import { Container } from "./styles";
 
 const Signup = () => {
-  return <FormCadastro></FormCadastro>;
+  return (
+    <Container>
+      <FormCadastro />
+    </Container>
+  );
 };
 
 export default Signup;

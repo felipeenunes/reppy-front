@@ -29,28 +29,29 @@ const FormAdress = ({ setFormRegister, formRegister }) => {
   return (
     <Container>
       <form onSubmit={handleSubmit(handleFormAdress)}>
-        <h1> Formulário de Endereço</h1>
+        <h1> Seu Endereço</h1>
         <div>
-          <input type="uf" placeholder="uf" {...register("uf")} />
-          {errors.uf?.message}
-          <input type="street" placeholder="street" {...register("street")} />
+          <input type="street" placeholder="Rua" {...register("street")} />
           {errors.street?.message}
           <input
             type="street_number"
-            placeholder="street_number"
+            placeholder="Número"
             {...register("street_number")}
           />
           {errors.street_number?.message}
-          <input type="city" placeholder="city" {...register("city")} />
+          <input type="uf" placeholder="UF" {...register("uf")} />
+          {errors.uf?.message}
+          <input type="city" placeholder="Cidade" {...register("city")} />
           {errors.city?.message}
           <input
             type="text"
-            placeholder="zip_code"
+            placeholder="CEP"
             maxLength="9"
             {...register("zip_code")}
           />
           {errors.zip_code?.message}
-          <button type="submit">Acessar</button>
+
+          <button type="submit">Próximo</button>
         </div>
       </form>
     </Container>

@@ -10,9 +10,10 @@ import { IoEyeSharp } from "react-icons/io5";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
 
 const FormCadastro = () => {
-  const { address, setAddress } = useAddress();
+  const { address } = useAddress();
   const history = useHistory();
   const [visibility, setVisibility] = useState(true);
   const [typePassword, setTypePassword] = useState("password");
@@ -76,7 +77,7 @@ const FormCadastro = () => {
 
   return (
     <Container>
-      <h1> Cadastro Na Reppy</h1>
+      {/* <h1> Cadastro Na Reppy</h1> */}
       {!formRegister && (
         <FormAdress
           setFormRegister={setFormRegister}
@@ -92,7 +93,7 @@ const FormCadastro = () => {
                 <div className="input-wrapper">
                   <input
                     type="cpf"
-                    placeholder="cpf"
+                    placeholder="CPF"
                     {...register("cpf")}
                     className="inputs"
                   />
@@ -101,7 +102,7 @@ const FormCadastro = () => {
 
                   <input
                     type="text"
-                    placeholder="name"
+                    placeholder="Nome"
                     {...register("name")}
                     className="inputs"
                   />
@@ -110,7 +111,7 @@ const FormCadastro = () => {
 
                   <input
                     type="email"
-                    placeholder="email"
+                    placeholder="Email"
                     {...register("email")}
                     className="inputs"
                   />
@@ -119,7 +120,7 @@ const FormCadastro = () => {
 
                   <input
                     type="text"
-                    placeholder="college"
+                    placeholder="Faculdade / Universidade"
                     {...register("college")}
                     className="inputs"
                   />
@@ -128,41 +129,50 @@ const FormCadastro = () => {
 
                   <input
                     type="texto"
-                    placeholder="(xx)xxxxx-xxxx"
+                    placeholder="Celular (xx)xxxxx-xxxx"
                     {...register("phone_number")}
                     className="inputs"
                   />
 
                   {errors.phone_number?.message}
-
-                  <input
-                    id="password"
-                    type={typePassword}
-                    placeholder="password"
-                    {...register("password")}
-                    className="inputs"
-                  />
-                  <label for="password">
-                    {visibility ? (
-                      <BsFillEyeSlashFill
-                        size={20}
-                        onClick={showPassword}
-                        className="eye-icon"
-                      />
-                    ) : (
-                      <IoEyeSharp
-                        size={20}
-                        className="eye-icon"
-                        onClick={showPassword}
-                      />
-                    )}
-                  </label>
+                  <div className="wrapper">
+                    <input
+                      id="password"
+                      type={typePassword}
+                      placeholder="Senha"
+                      {...register("password")}
+                      className="inputs"
+                    />
+                    <label for="password">
+                      {visibility ? (
+                        <BsFillEyeSlashFill
+                          size={20}
+                          onClick={showPassword}
+                          className="eye-icon"
+                        />
+                      ) : (
+                        <IoEyeSharp
+                          size={20}
+                          className="eye-icon"
+                          onClick={showPassword}
+                        />
+                      )}
+                    </label>
+                  </div>
                 </div>
                 {errors.password?.message}
 
                 <div className="buttons">
-                  <button type="submit">Acessar</button>
+                  <button type="submit">
+                    Registrar{""}
+                    <span>
+                      <TiArrowRightThick />
+                    </span>
+                  </button>
                   <button onClick={() => setFormRegister(!formRegister)}>
+                    <span>
+                      <TiArrowLeftThick />
+                    </span>
                     Voltar
                   </button>
                 </div>
