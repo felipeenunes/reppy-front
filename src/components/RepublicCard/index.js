@@ -7,32 +7,31 @@ function RepublicCard({ republic }) {
   return (
     <Container>
       <img
-        src="http://s2.glbimg.com/h70ljat_mAOUOM2xRM967MtDing=/s.glbimg.com/og/rg/f/original/2013/03/27/unidos_por_acaso4_606x455.jpg"
-        alt="nome da rep"
-        onClick={() => history.push("/republic/2")}
+        src={republic.pictures[0].picture_url}
+        alt={republic.name}
+        onClick={() => history.push(`/republic/${republic.id}`)}
       />
       <div className="republic-infos">
-        <span>República Pública</span>
-        <span>
-          República da iniciativa pública, nada aqui é seu, tudo aqui é nosso, e
-          o que é nosso não é seu.
-        </span>
+        <span>{republic.name}</span>
+        <span className="republic-description">{republic.description}</span>
       </div>
       <div className="republic-region">
         <span>Local</span>
-        <span>Ouro Preto</span>
-        <span>MG</span>
+        <span>{republic.address.city}</span>
+        <span>{republic.address.uf}</span>
       </div>
       <div className="republic-vacancies">
         <span>Vagas</span>
-        <span>2</span>
+        <span>{republic.vacancies_qty}</span>
       </div>
       <div className="republic-price">
         <span>Preço</span>
         <span>A partir de</span>
-        <span>R$ 200,00</span>
+        <span>R$ {republic.price},00</span>
       </div>
-      <button onClick={() => history.push("/republic/2")}>Detalhes</button>
+      <button onClick={() => history.push(`/republic/${republic.id}`)}>
+        Detalhes
+      </button>
     </Container>
   );
 }

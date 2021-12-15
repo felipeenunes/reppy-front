@@ -10,19 +10,17 @@ const Dashboard = () => {
   useEffect(() => {
     api.get("/republic").then((res) => {
       setRepublics(res.data);
-      console.log(res.data);
     });
   }, []);
-  // console.log(republics);
   return (
     <Main>
       <MenuSidebar />
       <Header />
       <Cards>
-        <RepublicCard />
-        <RepublicCard />
-        <RepublicCard />
-        <RepublicCard />
+        {republics.length > 0 &&
+          republics.map((republic) => (
+            <RepublicCard key={republic.id} republic={republic} />
+          ))}
       </Cards>
     </Main>
   );

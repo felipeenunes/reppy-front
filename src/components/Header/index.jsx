@@ -3,8 +3,8 @@ import { HeaderMain } from "./style";
 const Header = () => {
   return (
     <HeaderMain>
-      <h1>Repúblicas</h1>
-      <button>Criar reppy</button>
+      <h1>REPÚBLICAS</h1>
+      <button>CRIAR REPPY</button>
     </HeaderMain>
   );
 };

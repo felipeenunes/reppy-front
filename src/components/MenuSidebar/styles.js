@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Sidebar = styled.div`
-  width: 10%;
-  max-width: 50px;
+  width: 50px;
   height: 100%;
   position: fixed;
   background-color: #f25d27;
@@ -18,7 +17,7 @@ export const Sidebar = styled.div`
   }
   && svg:hover {
     cursor: pointer;
-    color: black;
+    color: lightgrey;
   }
 `;
 
