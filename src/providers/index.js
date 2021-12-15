@@ -1,7 +1,12 @@
 import { AuthProvider } from "./Auth";
+import { AddressProvider } from "./Address";
 
 const Providers = ({ children }) => {
-  return <AuthProvider>{children}</AuthProvider>;
+  return (
+    <AuthProvider>
+      <AddressProvider>{children}</AddressProvider>
+    </AuthProvider>
+  );
 };
 
 export default Providers;

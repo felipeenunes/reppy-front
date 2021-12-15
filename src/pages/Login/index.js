@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { useAuth } from "../../providers/Auth";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import republica from "../../asserts/republica-estudantes.jpg";
 import { BsFillEyeSlashFill } from "react-icons/bs";
@@ -39,7 +39,7 @@ const Login = () => {
         console.log(response.data);
         //acessar a pagina interna
       })
-      .catch((err) => toast.error("Nome de usuário ou senha inválida!"));
+      .catch((err) => toast.error("Email de usuário ou senha inválida!"));
   };
 
   const showPassword = () => {
@@ -52,6 +52,8 @@ const Login = () => {
     console.log(typePassword);
   };
 
+  const history = useHistory();
+
   return (
     <Container>
       <Content>
@@ -59,7 +61,11 @@ const Login = () => {
         <ContainerForm>
           <form onSubmit={handleSubmit(handleFormLogin)}>
             <div>
-              <AiOutlineArrowLeft className="back" size={40} />
+              <AiOutlineArrowLeft
+                className="back"
+                size={40}
+                onClick={() => history.push("/")}
+              />
             </div>
             <h1> Fazer Login</h1>
             <div>
@@ -74,13 +80,13 @@ const Login = () => {
                 {errors.email?.message}
 
                 <input
-                  id="email"
+                  id="password"
                   type={typePassword}
                   placeholder="password"
                   {...register("password")}
                   className="inputs"
                 />
-                <label for="email">
+                <label for="password">
                   {visibility ? (
                     <BsFillEyeSlashFill
                       size={20}
