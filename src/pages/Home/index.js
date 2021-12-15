@@ -1,7 +1,7 @@
 import React from "react";
 import RepublicCard from "../../components/RepublicCard";
 
-// import { Container } from './styles';
+// import { Container } from "./styles";
 
 function Home() {
   return (
