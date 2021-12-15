@@ -6,11 +6,15 @@ export const Container = styled.div`
   background-color: #e9e9e9;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  #logo {
+    margin-bottom: 40px;
+  }
+
   form {
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     max-height: 640px;
@@ -34,17 +38,10 @@ export const Container = styled.div`
   }
 
   form {
-    /* width: 100%; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* height: 51vh; */
-
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
-      /* margin: 30px; */
     }
     input {
       border-radius: 5px;

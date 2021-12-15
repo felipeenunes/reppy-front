@@ -11,6 +11,7 @@ import { BsFillEyeSlashFill } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Logo from "../../components/Logo";
 
 const Login = () => {
   const { setAuth } = useAuth();
@@ -67,6 +68,7 @@ const Login = () => {
                 onClick={() => history.push("/")}
               />
             </div>
+            <Logo />
             <h1> Fazer Login</h1>
             <div>
               <div className="input-wrapper">
@@ -104,7 +106,7 @@ const Login = () => {
               </div>
               {errors.password?.message}
               <span>
-                <Link> Esqueci senha </Link>
+                <Link> Esqueci a senha </Link>
               </span>
               <button type="submit">Acessar</button>
             </div>

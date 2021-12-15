@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  #logo {
+    margin: 0;
+  }
+
   height: 100%;
   width: 100%;
   min-height: 530px;
@@ -13,6 +17,7 @@ export const Container = styled.main`
 
   position: relative;
   overflow: hidden;
+  background-color: #e9e9e9;
 `;
 export const Content = styled.article`
   max-width: 400px;
@@ -69,9 +74,10 @@ export const ContainerForm = styled.section`
       .inputs {
         border-radius: 5px;
         margin: 5px;
-        width: 60%;
-        height: 70%;
         padding: 10px;
+        border: 1px solid lightgray;
+        width: 280px;
+        color: gray;
       }
 
       .input-wrapper {
@@ -87,16 +93,22 @@ export const ContainerForm = styled.section`
       }
 
       button {
-        width: 60%;
         color: #ffffff;
         background-color: #f25d27;
-        margin: 20px 0 5px;
+        margin-top: 16px;
         padding: 10px;
+        border: none;
+        border-radius: 10px;
+        width: 120px;
+
+        span {
+          margin: 0 8px;
+        }
       }
 
       span {
         a {
-          color: #a0acb2;
+          color: gray;
           font-size: 15px;
         }
       }
