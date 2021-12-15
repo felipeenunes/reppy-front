@@ -1,10 +1,10 @@
-import { Container, Content, ContainerForm } from "./style";
+import { Container, Content, ContainerForm } from "./styles";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../services/api";
 import { useAuth } from "../../providers/Auth";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import republica from "../../asserts/republica-estudantes.jpg";
 import { BsFillEyeSlashFill } from "react-icons/bs";
@@ -63,30 +63,39 @@ const Login = () => {
             </div>
             <h1> Fazer Login</h1>
             <div>
-              <input
-                type="email"
-                placeholder="email"
-                {...register("email")}
-                className="inputs"
-              />
-              {errors.email?.message}
-
-              <input
-                type={typePassword}
-                placeholder="password"
-                {...register("password")}
-                className="inputs"
-              />
-              {visibility ? (
-                <BsFillEyeSlashFill
-                  size={20}
-                  className="eye"
-                  onClick={showPassword}
+              <div className="input-wrapper">
+                <input
+                  type="email"
+                  placeholder="email"
+                  {...register("email")}
+                  className="inputs"
                 />
-              ) : (
-                <IoEyeSharp size={20} className="eye" onClick={showPassword} />
-              )}
 
+                {errors.email?.message}
+
+                <input
+                  id="email"
+                  type={typePassword}
+                  placeholder="password"
+                  {...register("password")}
+                  className="inputs"
+                />
+                <label for="email">
+                  {visibility ? (
+                    <BsFillEyeSlashFill
+                      size={20}
+                      onClick={showPassword}
+                      className="eye-icon"
+                    />
+                  ) : (
+                    <IoEyeSharp
+                      size={20}
+                      className="eye-icon"
+                      onClick={showPassword}
+                    />
+                  )}
+                </label>
+              </div>
               {errors.password?.message}
               <span>
                 <Link> Esqueci senha </Link>

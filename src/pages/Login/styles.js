@@ -73,10 +73,16 @@ export const ContainerForm = styled.section`
         height: 70%;
         padding: 10px;
       }
-      .eye {
+
+      .input-wrapper {
+        position: relative;
+      }
+
+      .eye-icon {
         position: absolute;
-        bottom: 406px;
-        right: 200px;
+        right: 56px;
+        bottom: 16px;
+        color: #777;
         cursor: pointer;
       }
 
