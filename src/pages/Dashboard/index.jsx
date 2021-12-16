@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <Main>
       <MenuSidebar />
-      <Header />
+      <Header pageTitle="REPÚBLICAS" />
       <Cards>
         {republics.length > 0 &&
           republics.map((republic) => (
