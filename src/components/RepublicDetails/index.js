@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { Container, MainContainer } from "./styles";
 import { api } from "../../services/api";
 import { useEffect } from "react";
@@ -58,16 +57,19 @@ function RepublicDetails() {
               alt={republic.name}
             />
             <div className="others-pictures">
-              {republic.pictures.map((picture, index) => {
-                if (index > 0 && index < 5)
-                  return (
-                    <img
-                      key={index}
-                      src={picture.picture_url}
-                      alt={republic.name}
-                    />
-                  );
-              })}
+              {
+                // eslint-disable-next-line
+                republic.pictures.map((picture, index) => {
+                  if (index > 0 && index < 5)
+                    return (
+                      <img
+                        key={index}
+                        src={picture.picture_url}
+                        alt={republic.name}
+                      />
+                    );
+                })
+              }
             </div>
           </div>
           <button>QUERO MORAR NESSA BAGAÇA!</button>
