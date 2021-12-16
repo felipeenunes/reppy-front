@@ -55,6 +55,12 @@ export const Container = styled.div`
       display: flex;
       width: 850px;
     }
+
+    .teste {
+      display: flex;
+      background-color: "red";
+    }
+
     button {
       color: #ffffff;
       background-color: #f25d27;
@@ -79,5 +85,27 @@ export const Container = styled.div`
     right: 16px;
     bottom: 16px;
     color: gray;
+  }
+
+  #teste {
+    display: flex;
+    background-color: "red";
+  }
+
+  .div-teste {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e9e9e9;
+  }
+
+  .teste {
+    margin-top: 24px;
+    width: 500px;
+    position: relative;
+
+    input {
+      position: absolute;
+      right: 4px;
+    }
   }
 `;

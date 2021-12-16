@@ -3,8 +3,11 @@ import { Container, MainContainer } from "./styles";
 import { api } from "../../services/api";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import { useAuth } from "../../providers/Auth";
 
 function RepublicDetails() {
+  const { auth } = useAuth();
+
   const params = useParams();
   const [republic, setRepublic] = useState([]);
   useEffect(() => {
@@ -14,6 +17,22 @@ function RepublicDetails() {
     });
   }, [params.id]);
   console.log(republic);
+
+  function iWantToLiveWithYou() {
+    console.log(params.id);
+
+    let config = {
+      headers: {
+        Authorization: `Bearer ${auth}`,
+      },
+    };
+
+    const data = {
+      republic_id: params.id,
+    };
+
+    api.post("/send-email", data, config).then((resp) => console.log(resp));
+  }
 
   return republic.length === 0 ? (
     <Container>
@@ -72,7 +91,9 @@ function RepublicDetails() {
               }
             </div>
           </div>
-          <button>QUERO MORAR NESSA BAGAÇA!</button>
+          <button onClick={iWantToLiveWithYou}>
+            QUERO MORAR NESSA BAGAÇA!
+          </button>
         </div>
       </Container>
     </MainContainer>

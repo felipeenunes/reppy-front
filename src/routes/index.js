@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import Republic from "../pages/Republic";
 import Signup from "../pages/Signup";
 import CreateRep from "../pages/CreateRep";
+import About from "../pages/About";
 
 const Routes = () => {
   return (
@@ -22,6 +23,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/republic">
         <CreateRep />
+      </Route>
+      <Route exact path="/about">
+        <About />
       </Route>
     </Switch>
   );

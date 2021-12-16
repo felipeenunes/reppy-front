@@ -109,7 +109,6 @@ export const Container = styled.div`
       background-color: #f25d27;
       border: none;
       cursor: pointer;
-      /* height: 40px; */
       color: white;
       padding: 1rem;
       font-weight: bold;

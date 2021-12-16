@@ -1,4 +1,4 @@
-import { Container, Content, ContainerForm } from "./styles";
+import { Container } from "./styles";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -70,150 +70,149 @@ const FormRepo = () => {
         />
       )}
       {formRegister && (
-        <Content>
-          <ContainerForm>
-            <form onSubmit={handleSubmit(handleFormRepublic)}>
-              <h1>Dados Republica</h1>
-              <div>
-                <div className="input-wrapper">
-                  <input
-                    type="text"
-                    placeholder="Nome"
-                    {...register("name")}
-                    className="inputs"
-                  />
+        <form onSubmit={handleSubmit(handleFormRepublic)}>
+          <h1>Dados Republica</h1>
 
-                  {errors.name?.message}
+          <div className="input-wrapper">
+            <input
+              type="text"
+              placeholder="Nome"
+              {...register("name")}
+              className="inputs"
+            />
 
-                  <input
-                    type="text"
-                    placeholder="Descrição"
-                    {...register("description")}
-                    className="inputs"
-                  />
+            {errors.name?.message}
 
-                  {errors.description?.message}
+            <input
+              type="text"
+              placeholder="Descrição"
+              {...register("description")}
+              className="inputs"
+            />
 
-                  <input
-                    type="text"
-                    placeholder="Preço"
-                    {...register("price")}
-                    className="inputs"
-                  />
+            {errors.description?.message}
 
-                  {errors.price?.message}
+            <input
+              type="text"
+              placeholder="Preço"
+              {...register("price")}
+              className="inputs"
+            />
 
-                  <input
-                    type="texto"
-                    placeholder="Quantidades de vagas"
-                    {...register("vacancies_qty")}
-                    className="inputs"
-                  />
+            {errors.price?.message}
 
-                  {errors.vacancies_qty?.message}
+            <input
+              type="texto"
+              placeholder="Quantidades de vagas"
+              {...register("vacancies_qty")}
+              className="inputs"
+            />
 
-                  <input
-                    type="texto"
-                    placeholder="Vagas disponível"
-                    {...register("max_occupancy")}
-                    className="inputs"
-                  />
+            {errors.vacancies_qty?.message}
 
-                  {errors.max_occupancy?.message}
+            <input
+              type="texto"
+              placeholder="Vagas disponível"
+              {...register("max_occupancy")}
+              className="inputs"
+            />
 
-                  <FormPicture />
-                  <div>
-                    <div className="checkbox">
-                      <input
-                        type="checkbox"
-                        name="animals_allowed"
-                        value="false"
-                        onChange={(e) =>
-                          setExtras({
-                            ...extras,
-                            animals_allowed: e.target.checked,
-                          })
-                        }
-                      />
-                      <label for="animals_allowed"> Aceita animais?</label>
-                    </div>
+            {errors.max_occupancy?.message}
 
-                    <input
-                      type="checkbox"
-                      name="parties_allowed"
-                      value="false"
-                      onChange={(e) =>
-                        setExtras({
-                          ...extras,
+            <FormPicture />
+            <div className="teste teste1">
+              <input
+                type="checkbox"
+                name="animals_allowed"
+                value="false"
+                onChange={(e) =>
+                  setExtras({
+                    ...extras,
+                    animals_allowed: e.target.checked,
+                  })
+                }
+              />
+              <label for="animals_allowed"> Aceita animais?</label>
+            </div>
+            <div className="div-teste">
+              <div className="teste teste2">
+                <input
+                  type="checkbox"
+                  name="parties_allowed"
+                  value="false"
+                  onChange={(e) =>
+                    setExtras({
+                      ...extras,
 
-                          parties_allowed: e.target.checked,
-                        })
-                      }
-                    />
-                    <label for="parties_allowed"> É permitido festa?</label>
-
-                    <input
-                      type="checkbox"
-                      name="wifi"
-                      value="false"
-                      onChange={(e) =>
-                        setExtras({
-                          ...extras,
-
-                          wifi: e.target.checked,
-                        })
-                      }
-                    />
-                    <label for="wifi">Possui wifi?</label>
-
-                    <input
-                      type="checkbox"
-                      name="swiming_pool"
-                      value="false"
-                      onChange={(e) =>
-                        setExtras({
-                          ...extras,
-
-                          swiming_pool: e.target.checked,
-                        })
-                      }
-                    />
-                    <label for="swiming_pool"> Possui piscina?</label>
-
-                    <input
-                      type="checkbox"
-                      name="grill"
-                      value="false"
-                      onChange={(e) =>
-                        setExtras({
-                          ...extras,
-
-                          grill: e.target.checked,
-                        })
-                      }
-                    />
-                    <label for="grill"> Possui Churrasqueira</label>
-                  </div>
-                </div>
-
-                <div className="buttons">
-                  <button type="submit">
-                    Registrar{""}
-                    <span>
-                      <TiArrowRightThick />
-                    </span>
-                  </button>
-                  <button onClick={() => setFormRegister(!formRegister)}>
-                    <span>
-                      <TiArrowLeftThick />
-                    </span>
-                    Voltar
-                  </button>
-                </div>
+                      parties_allowed: e.target.checked,
+                    })
+                  }
+                />
+                <label for="parties_allowed"> É permitido festa?</label>
               </div>
-            </form>
-          </ContainerForm>
-        </Content>
+              <div className="teste teste3">
+                <input
+                  type="checkbox"
+                  name="wifi"
+                  value="false"
+                  onChange={(e) =>
+                    setExtras({
+                      ...extras,
+
+                      wifi: e.target.checked,
+                    })
+                  }
+                />
+                <label for="wifi">Possui wifi?</label>
+              </div>
+              <div className="teste teste4">
+                <input
+                  type="checkbox"
+                  name="swiming_pool"
+                  value="false"
+                  onChange={(e) =>
+                    setExtras({
+                      ...extras,
+
+                      swiming_pool: e.target.checked,
+                    })
+                  }
+                />
+
+                <label for="swiming_pool"> Possui piscina?</label>
+              </div>
+              <div className="teste teste5">
+                <input
+                  type="checkbox"
+                  name="grill"
+                  value="false"
+                  onChange={(e) =>
+                    setExtras({
+                      ...extras,
+
+                      grill: e.target.checked,
+                    })
+                  }
+                />
+                <label for="grill"> Possui Churrasqueira</label>
+              </div>
+              <div className="buttons">
+                <button type="submit">
+                  Registrar{""}
+                  <span>
+                    <TiArrowRightThick />
+                  </span>
+                </button>
+                <button onClick={() => setFormRegister(!formRegister)}>
+                  <span>
+                    <TiArrowLeftThick />
+                  </span>
+                  Voltar
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
       )}
     </Container>
   );
