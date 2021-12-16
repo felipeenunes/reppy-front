@@ -106,7 +106,7 @@ const Login = () => {
               </div>
               {errors.password?.message}
               <span>
-                <Link> Esqueci a senha </Link>
+                <Link to={"/register"}> Não tem cadastro? Cadastre-se! </Link>
               </span>
               <button type="submit">Acessar</button>
             </div>

@@ -4,6 +4,7 @@ import { Container } from "./styles";
 
 function RepublicCard({ republic }) {
   const history = useHistory();
+  console.log(republic.pictures);
   return (
     <Container>
       <img
