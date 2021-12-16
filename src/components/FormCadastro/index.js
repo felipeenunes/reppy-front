@@ -55,11 +55,9 @@ const FormCadastro = () => {
       let cpf = data["cpf"].replace("-", "");
       data["cpf"] = cpf;
     }
-    console.log(data);
     api
       .post("/user", data)
       .then((response) => {
-        console.log(response);
         history.push("/login");
         setFormRegister(!formRegister);
         toast.success("Cadastro criado com sucesso!");
@@ -74,7 +72,6 @@ const FormCadastro = () => {
     } else {
       setTypePassword("password");
     }
-    console.log(typePassword);
   };
 
   return (

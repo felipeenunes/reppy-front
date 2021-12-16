@@ -4,7 +4,6 @@ import { Container } from "./styles";
 
 function RepublicCard({ republic }) {
   const history = useHistory();
-  console.log(republic.pictures);
   return (
     <Container>
       <img
@@ -28,7 +27,7 @@ function RepublicCard({ republic }) {
       <div className="republic-price">
         <span>Preço</span>
         <span>A partir de</span>
-        <span>R$ {republic.price},00</span>
+        <span>R$ {republic.price.toFixed(2)}</span>
       </div>
       <button onClick={() => history.push(`/republic/${republic.id}`)}>
         Detalhes

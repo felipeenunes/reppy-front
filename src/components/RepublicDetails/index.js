@@ -4,6 +4,9 @@ import { api } from "../../services/api";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import { useAuth } from "../../providers/Auth";
+import { HiOutlineWifi } from "react-icons/hi";
+import { MdPool, MdOutlinePets } from "react-icons/md";
+import { GiBarbecue, GiPartyPopper } from "react-icons/gi";
 
 function RepublicDetails() {
   const { auth } = useAuth();
@@ -16,7 +19,6 @@ function RepublicDetails() {
       return response.data;
     });
   }, [params.id]);
-  console.log(republic);
 
   function iWantToLiveWithYou() {
     console.log(params.id);
@@ -49,7 +51,7 @@ function RepublicDetails() {
           </h4>
           <div className="price-card">
             <h4>
-              A Partir de R$ <span>{republic.price},00</span>
+              A Partir de R$ <span>{republic.price.toFixed(2)}</span>
             </h4>
           </div>
           <div className="vacancies">
@@ -62,9 +64,45 @@ function RepublicDetails() {
           </div>
           <div className="extras">
             <h3>Comodidades:</h3>
-            <div>
-              <span>wifi</span> <span>piscina</span> <span>churrasqueira</span>
-              <span>aceita animais</span>
+            <div className="extras-items">
+              {republic.extras &&
+                republic.extras.map((extra) => {
+                  if (extra === "wifi")
+                    return (
+                      <div className="extra-item">
+                        <HiOutlineWifi />
+                        <span>WiFi</span>
+                      </div>
+                    );
+                  if (extra === "grill")
+                    return (
+                      <div className="extra-item">
+                        <GiBarbecue />
+                        <span>Churras</span>
+                      </div>
+                    );
+                  if (extra === "swiming_pool")
+                    return (
+                      <div className="extra-item">
+                        <MdPool />
+                        <span>Piscina</span>
+                      </div>
+                    );
+                  if (extra === "animals_allowed")
+                    return (
+                      <div className="extra-item">
+                        <MdOutlinePets />
+                        <span>Pets</span>
+                      </div>
+                    );
+                  if (extra === "parties_allowed")
+                    return (
+                      <div className="extra-item">
+                        <GiPartyPopper />
+                        <span>Festas</span>
+                      </div>
+                    );
+                })}
             </div>
           </div>
         </div>

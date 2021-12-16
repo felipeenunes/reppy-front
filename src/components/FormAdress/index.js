@@ -25,7 +25,6 @@ const FormAdress = ({ setFormRegister, formRegister }) => {
   } = useForm({ resolver: yupResolver(formSchema) });
 
   const handleFormAdress = (data) => {
-    console.log(data);
     setAddress(data);
     setFormRegister(!formRegister);
   };

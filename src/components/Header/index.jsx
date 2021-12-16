@@ -1,3 +1,4 @@
+import { useHistory } from "react-router";
 import Logo from "../Logo";
 import { HeaderMain } from "./style";
 import { useAuth } from "../../providers/Auth";

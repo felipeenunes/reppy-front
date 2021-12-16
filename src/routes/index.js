@@ -5,6 +5,7 @@ import Republic from "../pages/Republic";
 import Signup from "../pages/Signup";
 import CreateRep from "../pages/CreateRep";
 import About from "../pages/About";
+import Profile from "../pages/Profile";
 
 const Routes = () => {
   return (
@@ -26,6 +27,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/about">
         <About />
+      </Route>
+      <Route exact path="/profile">
+        <Profile />
       </Route>
     </Switch>
   );

@@ -57,7 +57,6 @@ const FormRepo = () => {
     api
       .post("/republic", data, config)
       .then((response) => {
-        console.log(response);
         setFormRegister(!formRegister);
         toast.success("Republica criada com sucesso!");
       })
