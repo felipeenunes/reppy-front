@@ -3,7 +3,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Republic from "../pages/Republic";
 import Signup from "../pages/Signup";
-import CreateRepublic from "../pages/CreateRepublic";
+import CreateRep from "../pages/CreateRep";
 import Profile from "../pages/Profile";
 
 const Routes = () => {
@@ -21,10 +21,10 @@ const Routes = () => {
       <Route exact path="/register">
         <Signup />
       </Route>
-      <Route exact path="/newreppy">
-        <CreateRepublic />
+      <Route exact path="/republic">
+        <CreateRep />
       </Route>
-      <Route>
+      <Route exact path="/profile">
         <Profile />
       </Route>
     </Switch>

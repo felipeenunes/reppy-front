@@ -1,10 +1,13 @@
 import { AuthProvider } from "./Auth";
 import { AddressProvider } from "./Address";
+import { PictureProvider } from "./Pictures";
 
 const Providers = ({ children }) => {
   return (
     <AuthProvider>
-      <AddressProvider>{children}</AddressProvider>
+      <AddressProvider>
+        <PictureProvider>{children}</PictureProvider>
+      </AddressProvider>
     </AuthProvider>
   );
 };

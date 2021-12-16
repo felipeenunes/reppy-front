@@ -22,7 +22,7 @@ const FormCadastro = () => {
     cpf: yup
       .string()
       .required("campo obrigatório")
-      .test("len", "Must be exactly 5 characters", (cpf) => cpf.length === 11),
+      .test("len", "Must be exactly 11 characters", (cpf) => cpf.length === 11),
     name: yup.string().required("campo obrigatório"),
     email: yup.string().required("campo obrigatório").email("email inválido"),
     college: yup.string().required("campo obrigatório"),
@@ -54,11 +54,9 @@ const FormCadastro = () => {
       let cpf = data["cpf"].replace("-", "");
       data["cpf"] = cpf;
     }
-    console.log(data);
     api
       .post("/user", data)
       .then((response) => {
-        console.log(response);
         history.push("/login");
         setFormRegister(!formRegister);
       })
@@ -72,7 +70,6 @@ const FormCadastro = () => {
     } else {
       setTypePassword("password");
     }
-    console.log(typePassword);
   };
 
   return (

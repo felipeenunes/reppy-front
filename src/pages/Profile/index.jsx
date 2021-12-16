@@ -1,5 +1,6 @@
-import { Container, UserData } from "./style";
+import { Container } from "./style";
 import { MenuSidebar } from "../../components/MenuSidebar";
+import UserData from "../../components/UserData";
 import Header from "../../components/Header";
 
 const Profile = () => {

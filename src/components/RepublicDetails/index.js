@@ -16,7 +16,6 @@ function RepublicDetails() {
       return response.data;
     });
   }, [params.id]);
-  console.log(republic.extras);
 
   return republic.length === 0 ? (
     <Container>
