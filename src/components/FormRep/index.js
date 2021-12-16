@@ -6,10 +6,12 @@ import { useAddress } from "../../providers/Address";
 import { api } from "../../services/api";
 import FormAdress from "../FormAdress";
 import { useState } from "react";
+
 import { usePicture } from "../../providers/Pictures";
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
 import FormPicture from "../FormPicture";
 import { useAuth } from "../../providers/Auth";
+import { toast } from "react-toastify";
 
 const FormRepo = () => {
   const { address } = useAddress();
@@ -57,8 +59,9 @@ const FormRepo = () => {
       .then((response) => {
         console.log(response);
         setFormRegister(!formRegister);
+        toast.success("Republica criada com sucesso!");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Dados inválidos!"));
   };
 
   return (
