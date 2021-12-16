@@ -3,6 +3,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Republic from "../pages/Republic";
 import Signup from "../pages/Signup";
+import CreateRep from "../pages/CreateRep";
 
 const Routes = () => {
   return (
@@ -18,6 +19,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/register">
         <Signup />
+      </Route>
+      <Route exact path="/republic">
+        <CreateRep />
       </Route>
     </Switch>
   );
