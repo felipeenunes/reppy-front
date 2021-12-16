@@ -6,7 +6,7 @@ import { useAddress } from "../../providers/Address";
 import { api } from "../../services/api";
 import FormAdress from "../FormAdress";
 import { useState } from "react";
-import { toast } from "react-toastify";
+
 import { usePicture } from "../../providers/Pictures";
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
 import FormPicture from "../FormPicture";
