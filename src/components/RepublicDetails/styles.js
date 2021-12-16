@@ -55,6 +55,8 @@ export const Container = styled.div`
       max-width: 400px;
       display: flex;
       justify-content: center;
+      -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.19);
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.19);
       h4 {
         font-size: 1.3rem;
         font-weight: 300;
@@ -89,13 +91,30 @@ export const Container = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      span {
+      .extras-items {
+        display: flex;
+        justify-content: left;
+      }
+      .extra-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        border: 1px solid green;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
         background-color: #17d91f;
-        padding: 8px;
-        color: #fff4f4;
-        border-radius: 4px;
-        margin: 0 8px;
-        font-weight: bold;
+        color: white;
+        width: 100px;
+        margin: 1rem;
+      }
+      svg {
+        font-size: 1.5rem;
+      }
+      span,
+      svg {
+        font-weight: bolder;
+        color: white;
       }
     }
   }
@@ -127,6 +146,7 @@ export const Container = styled.div`
     .picture-0 {
       width: 100%;
       height: 100%;
+      max-width: 500px;
     }
     .others-pictures {
       display: flex;

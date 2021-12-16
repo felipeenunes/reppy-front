@@ -1,12 +1,14 @@
+import { useHistory } from "react-router";
 import Logo from "../Logo";
 import { HeaderMain } from "./style";
 
 const Header = ({ pageTitle }) => {
+  const history = useHistory();
   return (
     <HeaderMain>
       <Logo />
       <h1>{pageTitle}</h1>
-      <button>CRIAR REPPY</button>
+      <button onClick={() => history.push("/newreppy")}>CRIAR REPPY</button>
     </HeaderMain>
   );
 };

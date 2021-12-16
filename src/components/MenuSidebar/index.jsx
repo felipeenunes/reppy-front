@@ -1,5 +1,4 @@
 import { useHistory } from "react-router-dom";
-// import { useEffect, useState } from "react";
 import { CentralIcons, Sidebar } from "./styles";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
@@ -11,7 +10,7 @@ export const MenuSidebar = () => {
     <Sidebar>
       <BiHomeHeart onClick={() => history.push("/")} />
       <CentralIcons>
-        <HiOutlineLocationMarker />
+        <HiOutlineLocationMarker onClick={() => history.push("/")} />
         <BiFilterAlt />
       </CentralIcons>
       <AiOutlineUser onClick={() => history.push("/profile")} />
