@@ -22,7 +22,7 @@ const FormCadastro = () => {
     cpf: yup
       .string()
       .required("campo obrigatório")
-      .test("len", "Must be exactly 5 characters", (cpf) => cpf.length === 11),
+      .test("len", "Must be exactly 11 characters", (cpf) => cpf.length === 11),
     name: yup.string().required("campo obrigatório"),
     email: yup.string().required("campo obrigatório").email("email inválido"),
     college: yup.string().required("campo obrigatório"),

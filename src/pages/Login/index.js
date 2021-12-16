@@ -38,7 +38,7 @@ const Login = () => {
         localStorage.setItem("token", response.data.token);
         setAuth(response.data.token);
         console.log(response.data);
-        //acessar a pagina interna
+        history.push("/");
       })
       .catch((err) => toast.error("Email de usuário ou senha inválida!"));
   };
@@ -106,7 +106,7 @@ const Login = () => {
               </div>
               {errors.password?.message}
               <span>
-                <Link> Esqueci a senha </Link>
+                <Link to="/register"> Cadastra-se aqui </Link>
               </span>
               <button type="submit">Acessar</button>
             </div>
