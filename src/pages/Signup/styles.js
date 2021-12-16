@@ -76,4 +76,10 @@ export const Container = styled.div`
     bottom: 16px;
     color: gray;
   }
+
+  .back {
+    color: #777;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
 `;
