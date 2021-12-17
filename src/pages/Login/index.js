@@ -22,7 +22,7 @@ const Login = () => {
     email: yup.string().required("Campo obrigatório"),
     password: yup.string().required("Campo obrigatório"),
   });
-
+  // teste
   const {
     register,
     handleSubmit,
