@@ -9,7 +9,6 @@ function FormPicture() {
   const [isUploading, setIsUploading] = useState(false);
 
   const uploadImg = () => {
-    console.log(selectedImg);
     const formData = new FormData();
     formData.append("file", selectedImg);
     formData.append("upload_preset", "capstone");
@@ -24,7 +23,6 @@ function FormPicture() {
         setPicture([...picture, { picture_url: resp.data.url }]);
         setIsUploading(false);
       });
-    console.log(picture);
   };
   return (
     <Container>

@@ -30,14 +30,12 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(formSchema) });
 
   const handleFormLogin = (data) => {
-    console.log(data);
     api
       .post("/login", data)
       .then((response) => {
         localStorage.clear();
         localStorage.setItem("token", response.data.token);
         setAuth(response.data.token);
-        console.log(response.data);
         history.push("/");
       })
       .catch((err) => toast.error("Email de usuário ou senha inválida!"));
@@ -50,7 +48,6 @@ const Login = () => {
     } else {
       setTypePassword("password");
     }
-    console.log(typePassword);
   };
 
   const history = useHistory();

@@ -11,6 +11,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const FormCadastro = () => {
   const { address } = useAddress();
@@ -54,13 +55,12 @@ const FormCadastro = () => {
       let cpf = data["cpf"].replace("-", "");
       data["cpf"] = cpf;
     }
-    console.log(data);
     api
       .post("/user", data)
       .then((response) => {
-        console.log(response);
         history.push("/login");
         setFormRegister(!formRegister);
+        toast.success("Cadastro criado com sucesso!");
       })
       .catch((err) => toast.error("Email usuário ou cpf existente!"));
   };
@@ -72,11 +72,17 @@ const FormCadastro = () => {
     } else {
       setTypePassword("password");
     }
-    console.log(typePassword);
   };
 
   return (
     <Container>
+      <div className="back">
+        <AiOutlineArrowLeft
+          className="back"
+          size={40}
+          onClick={() => history.push("/")}
+        />
+      </div>
       {/* <h1> Cadastro Na Reppy</h1> */}
       {!formRegister && (
         <FormAdress

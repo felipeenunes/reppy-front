@@ -7,5 +7,6 @@ export const Container = styled.div`
     font-size: 2.4rem;
     color: #f25d27;
     text-shadow: 2px 1px gray;
+    cursor: pointer;
   }
 `;

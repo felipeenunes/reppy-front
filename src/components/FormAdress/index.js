@@ -3,8 +3,12 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAddress } from "../../providers/Address";
 import { Container } from "./styles";
+import { TiArrowLeftThick } from "react-icons/ti";
+import { useHistory } from "react-router";
 
 const FormAdress = ({ setFormRegister, formRegister }) => {
+  const history = useHistory();
+
   const { setAddress } = useAddress();
   const formSchema = yup.object().shape({
     uf: yup.string(),
@@ -21,7 +25,6 @@ const FormAdress = ({ setFormRegister, formRegister }) => {
   } = useForm({ resolver: yupResolver(formSchema) });
 
   const handleFormAdress = (data) => {
-    console.log(data);
     setAddress(data);
     setFormRegister(!formRegister);
   };
@@ -52,6 +55,12 @@ const FormAdress = ({ setFormRegister, formRegister }) => {
           {errors.zip_code?.message}
 
           <button type="submit">Próximo</button>
+          <button onClick={() => history.push("/")}>
+            <span>
+              <TiArrowLeftThick />
+            </span>
+            Voltar
+          </button>
         </div>
       </form>
     </Container>
