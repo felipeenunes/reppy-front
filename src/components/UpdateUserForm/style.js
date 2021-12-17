@@ -28,7 +28,7 @@ const MainContainer = styled.main`
     }
 
     .input-wrapper {
-        width: 277px;
+        width: 400px;
         margin: 5px 0;
         display: flex;
         justify-content: space-between;
@@ -45,6 +45,7 @@ const MainContainer = styled.main`
             padding: 5px;
             border: none;
             color: #222;
+            width: 250px;
         }
     }
 
