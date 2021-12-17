@@ -27,8 +27,8 @@ const FormCadastro = () => {
     name: yup.string().required("campo obrigatório"),
     email: yup.string().required("campo obrigatório").email("email inválido"),
     college: yup.string().required("campo obrigatório"),
-    phone_number: yup.string().required("campo obrigatório"),
-    //   .matches("([1-9]d)s?d{5}-d{4}", "Formato válido:(xx)xxxxx-xxxx"),
+    phone_number: yup.string().required("campo obrigatório")
+      .matches("([1-9]d)s?d{5}-d{4}", "Formato válido:(xx)xxxxx-xxxx"),
     password: yup
       .string()
       .required("campo obrigatório")
