@@ -2,13 +2,11 @@ import jwtDecode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../providers/Auth";
 import { Container } from "./style";
-import { useHistory } from "react-router-dom";
 import UpdateUserForm from "../UpdateUserForm";
 
 const UserData = () => {
   const [openModal, setOpenModal] = useState(false);
   const [user, setUser] = useState([]);
-  const history = useHistory();
   const { auth } = useAuth();
 
   useEffect(() => {

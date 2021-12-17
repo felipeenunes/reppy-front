@@ -35,7 +35,7 @@ const UpdateUserForm = ({ openModal, setOpenModal }) => {
     useEffect(() => {
         const userToken = jwtDecode(auth);
         setUser(userToken.sub);
-    }, [])
+    }, [auth])
 
     const setAddressVisibility = () => {
         setOpenAddress(!openAddress)
