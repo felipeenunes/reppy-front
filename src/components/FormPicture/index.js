@@ -34,7 +34,9 @@ function FormPicture() {
         />
         <div className="button_div">
           {isUploading && <span>Loading!</span>}
-          <button onClick={uploadImg}>Upload!</button>
+          <button type="button" onClick={uploadImg}>
+            Upload!
+          </button>
         </div>
       </div>
     </Container>
