@@ -10,8 +10,7 @@ import { toast } from "react-toastify";
 import { MdKeyboardArrowDown } from 'react-icons/md'
 
 
-const UpdateUserForm = () => {
-    const [openModal, setOpenModal] = useState(false);
+const UpdateUserForm = ({ openModal, setOpenModal }) => {
     const [user, setUser] = useState({})
     const [openAddress, setOpenAddress] = useState(false)
     const { auth } = useAuth();
@@ -37,15 +36,6 @@ const UpdateUserForm = () => {
         const userToken = jwtDecode(auth);
         setUser(userToken.sub);
     }, [])
-
-    const checkClickLocation = e => {
-
-        if (typeof (e.target.className) === 'string') {
-            if (e.target.className.includes('container')) {
-                setOpenModal(false);
-            }
-        }
-    }
 
     const setAddressVisibility = () => {
         setOpenAddress(!openAddress)
@@ -98,6 +88,15 @@ const UpdateUserForm = () => {
                 toast.error("Não foi possível atualizar usuário")
             })
 
+    }
+
+    const checkClickLocation = e => {
+
+        if (typeof (e.target.className) === 'string') {
+            if (e.target.className.includes('container')) {
+                setOpenModal(false);
+            }
+        }
     }
 
     console.log(errors)
@@ -176,7 +175,7 @@ const UpdateUserForm = () => {
             </ModalBackground >
         )
             :
-            <button onClick={() => setOpenModal(true)}> Abrir Modal </button>
+            <></>
     )
 }
 

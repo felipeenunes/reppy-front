@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const ModalBackground = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
@@ -11,11 +14,11 @@ const ModalBackground = styled.div`
 `;
 
 const MainContainer = styled.main`
-    width: 890px;
+    width: 50%;
     background-color: #edecec;
     box-sizing: border-box;
     padding: 20px;
-    height: 500px;
+    height: 570px;
     
     > form {
         display: flex;
@@ -59,7 +62,7 @@ const MainContainer = styled.main`
 
         > span > svg {
             margin-left: 10px;
-            font-size: 20px;
+            font-size: 30px;
             transform: ${props => props.openAddress ? 'rotate(180deg)' : 'rotate(0)'};
             transition: .3s;
         }

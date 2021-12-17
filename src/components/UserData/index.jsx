@@ -3,15 +3,20 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../providers/Auth";
 import { Container } from "./style";
 import { useHistory } from "react-router-dom";
+import UpdateUserForm from "../UpdateUserForm";
 
 const UserData = () => {
+  const [openModal, setOpenModal] = useState(false);
   const [user, setUser] = useState([]);
   const history = useHistory();
   const { auth } = useAuth();
+
   useEffect(() => {
     const data = jwtDecode(auth);
     setUser([data.sub]);
   }, [auth]);
+
+
   return user.length > 0 ? (
     <Container>
       <div className="info-container">
@@ -40,7 +45,8 @@ const UserData = () => {
           </span>
         </div>
       </div>
-      <button onClick={() => history.push("/edituser")}>EDITAR</button>
+      <button onClick={() => setOpenModal(true)}>EDITAR</button>
+      <UpdateUserForm openModal= {openModal} setOpenModal={setOpenModal}/>
     </Container>
   ) : (
     <Container>
