@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import Republic from "../pages/Republic";
 import Signup from "../pages/Signup";
 import CreateRep from "../pages/CreateRep";
+import UpdateUserForm from "../components/UpdateUserForm";
 
 const Routes = () => {
   return (
@@ -22,6 +23,10 @@ const Routes = () => {
       </Route>
       <Route exact path="/republic">
         <CreateRep />
+      </Route>
+      {/* ======== APAGARRRRRRRRRRRR =========== */}
+      <Route exact path='/testeUpdate'>
+        <UpdateUserForm />
       </Route>
     </Switch>
   );
