@@ -66,6 +66,7 @@ function RepublicDetails() {
             <h3>Comodidades:</h3>
             <div className="extras-items">
               {republic.extras &&
+                // eslint-disable-next-line
                 republic.extras.map((extra) => {
                   if (extra === "wifi")
                     return (

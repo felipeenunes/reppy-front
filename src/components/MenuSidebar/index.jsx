@@ -3,6 +3,7 @@ import { CentralIcons, Sidebar } from "./styles";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiHomeHeart, BiFilterAlt } from "react-icons/bi";
+import { BsQuestionCircle } from "react-icons/bs";
 
 export const MenuSidebar = () => {
   const history = useHistory();
@@ -13,7 +14,11 @@ export const MenuSidebar = () => {
         <HiOutlineLocationMarker onClick={() => history.push("/")} />
         <BiFilterAlt />
       </CentralIcons>
-      <AiOutlineUser onClick={() => history.push("/profile")} />
+
+      <CentralIcons>
+        <AiOutlineUser onClick={() => history.push("/profile")} />
+        <BsQuestionCircle onClick={() => history.push("/about")} />
+      </CentralIcons>
     </Sidebar>
   );
 };
