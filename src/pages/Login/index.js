@@ -6,7 +6,7 @@ import { api } from "../../services/api";
 import { useAuth } from "../../providers/Auth";
 import { Link, useHistory } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import republica from "../../asserts/republica-estudantes.png";
+import republica from "../../asserts/republica-estudantes.svg";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
 import { useState } from "react";
